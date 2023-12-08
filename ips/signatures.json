@@ -1,0 +1,33 @@
+{
+  "SlowDoS":
+  [{
+    "attack": "Slow GET",
+    "request": {
+        "content": "GET / HTTP/1.1",
+        "window-size": "None",
+        "connection": "None",
+        "content-length": "None"
+    },
+    "partial-request":{
+        "max-time-between": 5,
+        "max-number": 5
+    },
+    "volume": {
+        "opened-connections": 20,
+        "per-sec": 1
+    }
+  }],
+
+  "FloodDoS":
+  [{
+    "attack": "SYN Flood",
+    "request": {
+      "protocol": "TCP",
+      "request-type": "SYN"
+    },
+    "volume": {
+      "connections": 1000,
+      "per-sec": 10
+    }
+  }]
+}
